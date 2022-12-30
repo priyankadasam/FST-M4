@@ -1,0 +1,5 @@
+hive> create database avengers;
+hive> use avengers;
+hive> select COUNT(*) from episode4 where INSTR(dialogues, 'Luke')>0;
+hive> INSERT OVERWRITE LOCAL DIRECTORY '/totalLuke'  select COUNT(*) from episode4 where INSTR(dialogues, 'Luke')>0;
+hive> INSERT OVERWRITE DIRECTORY 'user/priyanka/totalLuke' ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' select COUNT(*) from episode4 where INSTR(dialogues, 'Luke')>0;

@@ -1,0 +1,20 @@
+hive> create database avengers;
+hive> use avengers;
+hive> CREATE TABLE episode4 (name STRING, dialogues STRING) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t';
+hive> LOAD DATA LOCAL INPATH 'root/priyanka/pigactivity1/episodeIV_dialouges.txt' INTO TABLE episode4;
+hive> INSERT OVERWRITE LOCAL DIRECTORY '/output4'  select name,count(*) as linecount FROM episode4 GROUP BY name ORDER BY linecount DESC;
+hive> INSERT OVERWRITE DIRECTORY 'user/priyanka/output4' ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' select name,count(*) as linecount FROM episode4 GROUP BY name ORDER BY linecount DESC;
+
+
+hive> use avengers;
+hive> CREATE TABLE episode5 (name STRING, dialogues STRING) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t';
+hive> LOAD DATA LOCAL INPATH 'root/priyanka/pigactivity1/episodeV_dialogues.txt' INTO TABLE episode5;
+hive> INSERT OVERWRITE LOCAL DIRECTORY '/output5'  select name,count(*) as linecount FROM episode5 GROUP BY name ORDER BY linecount DESC;
+hive> INSERT OVERWRITE DIRECTORY 'user/priyanka/output5' ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' select name,count(*) as linecount FROM episode5 GROUP BY name ORDER BY linecount DESC;
+
+
+hive> use avengers;
+hive> CREATE TABLE episode6 (name STRING, dialogues STRING) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t';
+hive> LOAD DATA LOCAL INPATH 'root/priyanka/pigactivity1/episodeVI_dialogues.txt' INTO TABLE episode6;
+hive> INSERT OVERWRITE LOCAL DIRECTORY '/output6'  select name,count(*) as linecount FROM episode6 GROUP BY name ORDER BY linecount DESC;
+hive> INSERT OVERWRITE DIRECTORY 'user/priyanka/output6' ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' select name,count(*) as linecount FROM episode6 GROUP BY name ORDER BY linecount DESC;
